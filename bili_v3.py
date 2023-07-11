@@ -12,7 +12,12 @@ def get_bilibili_video_views(url):
     # The number of views might be in a tag like this, but this could vary
     # You'll need to inspect the page to find out where the information is
     views_tag = soup.find('span', {'class': 'view'})  
-    views = int(views_tag.text.replace(',', '')) if views_tag else None
+    #views = int(views_tag.text.replace(',', '')) if views_tag else None
+    if '万' in views_tag.text:
+        ratio = 10000
+    else:
+        ratio = 1
+    views = int(float(views_tag.text.replace(',', '').replace('万',''))*ratio) if views_tag else None
 
     return views
 

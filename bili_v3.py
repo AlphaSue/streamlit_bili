@@ -57,7 +57,9 @@ if url:
             # Save the data to the CSV file
             data.to_csv('data.csv', index=False)
 
-        title_placeholder.markdown(f'<h2 style="color:blue;">{title_name} "链接:"{url}</h2>', unsafe_allow_html=True)
+        #title_placeholder.markdown(f'<h2 style="color:blue;">{title_name} "链接:"{url}</h2>', unsafe_allow_html=True)
+        title_placeholder.markdown(f'<h2 style="color:blue;">{title_name}</h2>', unsafe_allow_html=True)
+        title_placeholder.markdown(f'<h2><a href="{url}" target="_blank">链接: {url}</a></h2>', unsafe_allow_html=True)
         views_placeholder.markdown(f'<h2 style="color:blue;">The video has {views if views is not None else "Unknown"} views.</h2>', unsafe_allow_html=True)
         time_placeholder.markdown(f'<h2 style="color:green;">Current time: {current_time}</h2>', unsafe_allow_html=True)
 

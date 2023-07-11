@@ -44,7 +44,7 @@ if url:
 
     while True:
         views = get_bilibili_video_views(url)
-        current_time = datetime.now().strftime("%H:%M:%S")
+        current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
         # Add the new data to the dataframe
         if views is not None:
